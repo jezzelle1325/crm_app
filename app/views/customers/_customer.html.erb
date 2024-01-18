@@ -5,10 +5,15 @@
     Challenge 6 (CRM App)
  -->
 
-<div class="customer-card">
-  <%= image_tag(customer.image) if customer.image.attached? %>
-  <h3><%= customer.full_name %></h3>
-  <p>Email: <%= customer.email_address %></p>
-  <p>Phone: <%= customer.phone_number %></p>
-  <p>Notes: <%= customer.notes %></p>
+<div class="customer-card card">
+  <% if customer.image.attached? %>
+    <%= image_tag(customer.image, class: "card-img-top rounded") %>
+  <% end %>
+  <div class="card-body">
+    <h3 class="card-title"><%= customer.full_name %></h3>
+    <p class="card-text text-muted">Email: <%= customer.email_address || "N/A" %></p>
+    <p class="card-text">Phone: <%= customer.phone_number %></p>
+    <p class="card-text"><%= customer.notes %></p>
+  </div>
 </div>
+

@@ -1,0 +1,16 @@
+<!--
+    Name: Jezreelson Sobremonte
+    Course: WEBD-3008 (248294)
+    Instructor: Jonathan Boisvert
+
+    Index
+
+ -->
+
+<%= link_to 'Alphabetized Customers', '/customers/alphabetized' %>
+<%= link_to 'Customers Missing Email', '/customers/missing_email' %>
+
+
+<% @customers.each do |customer| %>
+  <%= render 'customer', customer: customer %>
+<% end %>
